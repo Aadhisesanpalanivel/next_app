@@ -1,7 +1,7 @@
 "use client"
 import Navbar from "./Navbar"
 
-const Home=()=>{
+const Home1=()=>{
     return(
         <div>
             <Navbar/>
@@ -9,4 +9,4 @@ const Home=()=>{
         </div>
     )
 }
-export default Home
+export default Home1
