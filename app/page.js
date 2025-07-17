@@ -1,20 +1,21 @@
 "use client"
 import Login from '@/Components/Login';
-import SignUp from '@/Components/SignUp';
-import {signIn,signOut,useSession} from 'next-auth/react'
+
+import {signOut,useSession} from 'next-auth/react'
 export default function Home(){
   const{data:session}=useSession();
   if(session){
     return(
       <>
       <Home/>
-    <button onClick={()=>signOut()}>SIGNIN</button>
+      <p>your email is {session.user.name}</p>
+      <img src={session.user.image}></img>
+    <button onClick={()=>signOut()}>SIGNOUT</button>
     </>
   )}
   return(
-    <>
-    
-    <button onClick={()=>signIn()}>SIGNOUT</button>
-    </>
+    <div>
+    <Login/>
+    </div>
   )
 }
